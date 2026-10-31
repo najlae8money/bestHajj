@@ -851,6 +851,17 @@ export function buildWhatsAppUrl(message: string): string {
   return `https://wa.me/${phone}?text=${encoded}`;
 }
 
+export function resolveAssetUrl(relativePath: string): string {
+  const clean = relativePath.replace(/^\/+/, '');
+  if (
+    typeof window !== 'undefined' &&
+    Boolean((window as unknown as Record<string, boolean>).__MAQAM_STATIC_FALLBACK__)
+  ) {
+    return `public/${clean}`;
+  }
+  return clean;
+}
+
 export function formatBookingWhatsAppMessage(
   booking: ConfirmedBooking,
   notes?: string

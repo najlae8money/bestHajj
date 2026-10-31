@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SceneArtworkType } from '../utils/bookingLogic';
+import { SceneArtworkType, resolveAssetUrl } from '../utils/bookingLogic';
 
 interface SceneArtworkProps {
   type: SceneArtworkType;
@@ -68,11 +68,14 @@ export const SceneArtwork: React.FC<SceneArtworkProps> = ({
   continuousZoom = false
 }) => {
   const config = IMAGE_CONFIG[type] || IMAGE_CONFIG['makkah-haram'];
-  const [currentSrc, setCurrentSrc] = useState<string>(config.src);
+  const [currentSrc, setCurrentSrc] = useState<string>(() => resolveAssetUrl(config.src));
   const [imgError, setImgError] = useState(false);
 
   const handleImageError = () => {
-    if (currentSrc !== config.remoteFallback) {
+    const publicPath = `public/${config.src}`;
+    if (currentSrc === config.src) {
+      setCurrentSrc(publicPath);
+    } else if (currentSrc === publicPath) {
       setCurrentSrc(config.remoteFallback);
     } else {
       setImgError(true);

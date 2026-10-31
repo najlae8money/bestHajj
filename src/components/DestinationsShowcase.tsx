@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { SaudiDestinationSpotlight, buildWhatsAppUrl } from '../utils/bookingLogic';
+import { SaudiDestinationSpotlight, buildWhatsAppUrl, resolveAssetUrl } from '../utils/bookingLogic';
 import { MapPin, Sparkles, X, MessageCircle, CalendarCheck } from 'lucide-react';
 
 interface DestinationsShowcaseProps {
@@ -220,13 +220,18 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({
             className="group relative w-[265px] sm:w-[320px] md:w-[355px] h-[170px] sm:h-[190px] md:h-[205px] shrink-0 rounded-2xl overflow-hidden border border-[#244D40] bg-[#103328] text-right shadow-md focus:outline-none focus:ring-2 focus:ring-[#D9A85B] cursor-pointer transition-transform duration-300 hover:scale-[1.015] hover:border-[#D9A85B]/70"
           >
             <img
-              src={item.imageUrl}
+              src={resolveAssetUrl(item.imageUrl)}
               alt={item.title}
               loading="lazy"
               referrerPolicy="no-referrer"
               onError={(e) => {
                 const target = e.currentTarget;
-                if (target.src !== item.remoteFallback) {
+                const step = target.getAttribute('data-fallback-step') || '0';
+                if (step === '0') {
+                  target.setAttribute('data-fallback-step', '1');
+                  target.src = `public/${item.imageUrl}`;
+                } else if (step === '1') {
+                  target.setAttribute('data-fallback-step', '2');
                   target.src = item.remoteFallback;
                 }
               }}
@@ -365,8 +370,20 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
               <div className="grid grid-cols-1 md:grid-cols-12">
                 <div className="md:col-span-7 relative min-h-[250px] sm:min-h-[340px] bg-black">
                   <img
-                    src={selectedPhoto.imageUrl}
+                    src={resolveAssetUrl(selectedPhoto.imageUrl)}
                     alt={selectedPhoto.title}
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      const step = target.getAttribute('data-fallback-step') || '0';
+                      if (step === '0') {
+                        target.setAttribute('data-fallback-step', '1');
+                        target.src = `public/${selectedPhoto.imageUrl}`;
+                      } else if (step === '1') {
+                        target.setAttribute('data-fallback-step', '2');
+                        target.src = selectedPhoto.remoteFallback;
+                      }
+                    }}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent md:hidden" />
