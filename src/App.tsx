@@ -14,6 +14,7 @@ import { ManasikAndTrainGuide } from './components/ManasikAndTrainGuide';
 import { PackageDetailsModal } from './components/PackageDetailsModal';
 import { BookingModal, BookingDraftTarget } from './components/BookingModal';
 import { WhatsAppFloatingWidget } from './components/WhatsAppFloatingWidget';
+import { OfficeLocationsMap } from './components/OfficeLocationsMap';
 import {
   Search,
   SlidersHorizontal,
@@ -102,6 +103,12 @@ export default function App() {
             >
               قطار الحرمين
             </a>
+            <a
+              href="#office-map"
+              className="hover:text-[#0D4A38] hover:underline underline-offset-8 transition-colors whitespace-nowrap shrink-0"
+            >
+              مكاتبنا والخريطة
+            </a>
           </nav>
 
           {/* Zone 3: Primary action + Mobile Hamburger Toggle */}
@@ -141,7 +148,8 @@ export default function App() {
                 { href: '#packages', label: 'الباقات والرحلات المعتمدة' },
                 { href: '#destinations', label: 'الجولة البصرية — معرض الصور' },
                 { href: '#manasik', label: 'دليل مناسك العمرة والحج' },
-                { href: '#haramain-train', label: 'محطات قطار الحرمين السريع' }
+                { href: '#haramain-train', label: 'محطات قطار الحرمين السريع' },
+                { href: '#office-map', label: 'مكاتبنا وموقعنا على الخريطة' }
               ].map((link) => (
                 <a
                   key={link.href}
@@ -532,6 +540,9 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* Section 06: Interactive Office Locations & Map Showcase */}
+        <OfficeLocationsMap />
       </main>
 
       {/* Quiet Footer with Emerald Arabesque Background */}
@@ -575,6 +586,11 @@ export default function App() {
                 <li>
                   <a href="#haramain-train" className="hover:text-white transition-colors inline-flex items-center gap-1">
                     محطات قطار الحرمين السريع <ArrowUpLeft className="w-3 h-3" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#office-map" className="hover:text-white transition-colors inline-flex items-center gap-1">
+                    موقع المكتب والخريطة التفاعلية <ArrowUpLeft className="w-3 h-3" />
                   </a>
                 </li>
               </ul>
