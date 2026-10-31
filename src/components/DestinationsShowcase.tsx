@@ -13,6 +13,7 @@ export interface GalleryPhotoItem {
   subtitle: string;
   region: string;
   imageUrl: string;
+  remoteFallback: string;
   highlights: string[];
   seasonNote: string;
 }
@@ -23,7 +24,8 @@ export const GALLERY_ROW_1: GalleryPhotoItem[] = [
     title: 'المسجد الحرام والكعبة المشرفة',
     subtitle: 'إقامة فندقية فاخرة بإطلالة بانورامية مباشرة على صحن المطاف وساحات الحرم المكي الشريف',
     region: 'مكة المكرمة · رحاب الحرمين',
-    imageUrl: '/images/makkah-haram.jpg',
+    imageUrl: 'images/makkah-haram.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Great_Mosque_of_Mecca1.jpg/1280px-Great_Mosque_of_Mecca1.jpg',
     highlights: ['فنادق الصف الأول بجوار الحرم', 'مرافقة إرشادية لأداء المناسك', 'نقل خاص من المطار للفندق'],
     seasonNote: 'متاح طوال العام'
   },
@@ -32,7 +34,8 @@ export const GALLERY_ROW_1: GalleryPhotoItem[] = [
     title: 'رحاب الكعبة المشرفة والكسوة الذهبية',
     subtitle: 'أجواء روحانية خاشعة في قلب المسجد الحرام مع تنظيم متكامل لأوقات الطواف والسعي',
     region: 'مكة المكرمة · المشاعر المقدسة',
-    imageUrl: '/images/kaaba-closeup.jpg',
+    imageUrl: 'images/kaaba-closeup.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Kaaba_mirror_edit_jj.jpg/1280px-Kaaba_mirror_edit_jj.jpg',
     highlights: ['إصدار تصاريح العمرة عبر نسك', 'إشراف ميداني على مدار الساعة', 'برامج خاصة للعائلات وكبار السن'],
     seasonNote: 'متاح طوال العام'
   },
@@ -41,7 +44,8 @@ export const GALLERY_ROW_1: GalleryPhotoItem[] = [
     title: 'أبراج الساعة وقف الملك عبدالعزيز',
     subtitle: 'ضيافة خمس نجوم في قلب المنطقة المركزية على بُعد خطوات معدودة من بوابات الحرم',
     region: 'مكة المكرمة · أبراج البيت',
-    imageUrl: '/images/makkah-clock.jpg',
+    imageUrl: 'images/makkah-clock.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Abraj-al-Bait-Towers.JPG/1280px-Abraj-al-Bait-Towers.JPG',
     highlights: ['أجنحة وغرف مطلة على الكعبة', 'بوفيه إفطار وسحور فاخر', 'مصاعد خاصة متصلة بالحرم'],
     seasonNote: 'حجوزات مؤكدة فورية'
   },
@@ -50,7 +54,8 @@ export const GALLERY_ROW_1: GalleryPhotoItem[] = [
     title: 'المسجد النبوي الشريف والقبة الخضراء',
     subtitle: 'سكينة الجوار النبوي الشريف مع تنسيق مسبق لتصاريح الصلاة في الروضة الشريفة',
     region: 'المدينة المنورة · طيبة الطيبة',
-    imageUrl: '/images/madinah-nabawi.jpg',
+    imageUrl: 'images/madinah-nabawi.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Al-Masjid_AL-Nabawi_Door800x600x300.jpg/1280px-Al-Masjid_AL-Nabawi_Door800x600x300.jpg',
     highlights: ['إقامة في المنطقة المركزية الشمالية', 'تصاريح مؤكدة للروضة الشريفة', 'جولة المآثر النبوية الشريفة'],
     seasonNote: 'متاح طوال العام'
   },
@@ -59,7 +64,8 @@ export const GALLERY_ROW_1: GalleryPhotoItem[] = [
     title: 'مسجد قباء وجادة قباء التاريخية',
     subtitle: 'أول مسجد أُسس على التقوى في الإسلام ضمن برنامج الزيارات النبوية المصحوبة بمرشدين',
     region: 'المدينة المنورة · المآثر الإسلامية',
-    imageUrl: '/images/quba-mosque.jpg',
+    imageUrl: 'images/quba-mosque.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Quba_Mosque_in_2023.jpg/1280px-Quba_Mosque_in_2023.jpg',
     highlights: ['زيارة مسجد قباء وشهداء أحد', 'مرشد تاريخي متخصص في السيرة', 'حافلات حديثة مكيفة للعائلات'],
     seasonNote: 'ضمن جميع باقات المدينة'
   }
@@ -71,7 +77,8 @@ export const GALLERY_ROW_2: GalleryPhotoItem[] = [
     title: 'مدائن صالح والحِجر التاريخية بالعلا',
     subtitle: 'استكشاف أول موقع تراث عالمي لليونسكو في المملكة بين الواجهات النبطية المنحوتة في الصخر',
     region: 'العلا · شمال غرب المملكة',
-    imageUrl: '/images/alula-hegra.jpg',
+    imageUrl: 'images/alula-hegra.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Mada%27in_Salih-61982.jpg/1280px-Mada%27in_Salih-61982.jpg',
     highlights: ['جولة الحِجر وقصر الفريد', 'الإقامة في منتجعات وادي عشار', 'تأمل النجوم في سماء العلا الصافية'],
     seasonNote: 'أكتوبر — أبريل'
   },
@@ -80,7 +87,8 @@ export const GALLERY_ROW_2: GalleryPhotoItem[] = [
     title: 'جبل الفيل وتكوينات العلا الصخرية',
     subtitle: 'جلسات مسائية ساحرة عند الغروب وسط التكوينات الرملية الذهبية الفريدة في صحراء العلا',
     region: 'العلا · واحة الحضارات',
-    imageUrl: '/images/elephant-rock.jpg',
+    imageUrl: 'images/elephant-rock.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Elephant_Rock%2C_Al-Ula.jpg/1280px-Elephant_Rock%2C_Al-Ula.jpg',
     highlights: ['جلسات غروب خاصة للعائلات', 'زيارة البلدة القديمة بالعلا', 'رحلات جوية وطيران شراعي اختياري'],
     seasonNote: 'موسم شتاء طنطورة'
   },
@@ -89,7 +97,8 @@ export const GALLERY_ROW_2: GalleryPhotoItem[] = [
     title: 'قطار الحرمين السريع بين مكة والمدينة',
     subtitle: 'انتقال مريح وفائق السرعة بسرعة 300 كم/س يربط مكة المكرمة بالمدينة المنورة وجدة',
     region: 'مكة · جدة · المدينة المنورة',
-    imageUrl: '/images/haramain-train.jpg',
+    imageUrl: 'images/haramain-train.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Haramain_High_Speed_Railway.jpg/1280px-Haramain_High_Speed_Railway.jpg',
     highlights: ['تذاكر درجة الأعمال والاقتصادية', 'وصول خلال 140 دقيقة بين الحرمين', 'توصيل خاص من المحطة للفندق'],
     seasonNote: 'رحلات يومية منتظمة'
   },
@@ -98,7 +107,8 @@ export const GALLERY_ROW_2: GalleryPhotoItem[] = [
     title: 'جدة التاريخية — حارات ورواشين البلد',
     subtitle: 'جولة تراثية في قلب جدة القديمة المسجلة في اليونسكو بين البيوت الحجازية العريقة وأسواقها',
     region: 'جدة · ساحل البحر الأحمر',
-    imageUrl: '/images/jeddah-balad.jpg',
+    imageUrl: 'images/jeddah-balad.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Jeddah_historique.jpg/1280px-Jeddah_historique.jpg',
     highlights: ['زيارة بيت نصيف ومسجد الشافعي', 'واجهة جدة البحرية الجديدة', 'برامج الترانزيت السريع للمعتمرين'],
     seasonNote: 'متاح طوال العام'
   },
@@ -107,7 +117,8 @@ export const GALLERY_ROW_2: GalleryPhotoItem[] = [
     title: 'صعيد عرفات وجبل الرحمة بالمشاعر المقدسة',
     subtitle: 'تنظيم متكامل لرحلات الحج والمزارات الإيمانية في عرفات ومزدلفة ومنى بإشراف نخبة المرشدين',
     region: 'المشاعر المقدسة · مكة المكرمة',
-    imageUrl: '/images/mina-arafat.jpg',
+    imageUrl: 'images/mina-arafat.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Mount_Arafat.jpg/1280px-Mount_Arafat.jpg',
     highlights: ['مخيمات مطورة ومكيفة في المشاعر', 'إعاشة فاخرة ورعاية طبية متكاملة', 'مرشدون شرعيون مرافقون للحملة'],
     seasonNote: 'موسم الحج السنوي'
   }
@@ -119,7 +130,8 @@ export const GALLERY_ROW_3: GalleryPhotoItem[] = [
     title: 'الدرعية التاريخية والعمارة النجدية الأصيلة',
     subtitle: 'رحلة ثقافية إلى مهد الدولة السعودية الأولى وقصورها الطينية التاريخية ومطل البجيري',
     region: 'الرياض · الدرعية التاريخية',
-    imageUrl: '/images/diriyah-turaif.jpg',
+    imageUrl: 'images/diriyah-turaif.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Masmak_Fort_%2812753717253%29.jpg/1280px-Masmak_Fort_%2812753717253%29.jpg',
     highlights: ['جولة حي الطريف وقصر سلوى', 'عشاء فاخر في مطل البجيري', 'زيارة المتحف الوطني وقصر المصمك'],
     seasonNote: 'أكتوبر — مايو'
   },
@@ -128,7 +140,8 @@ export const GALLERY_ROW_3: GalleryPhotoItem[] = [
     title: 'أفق الرياض الحديثة وجسر المشاهدة',
     subtitle: 'إقامة فندقية راقية في العاصمة السعودية تجمع بين التسوق العالمي والفعاليات الثقافية والترفيهية',
     region: 'الرياض · العاصمة السعودية',
-    imageUrl: '/images/riyadh-kingdom.jpg',
+    imageUrl: 'images/riyadh-kingdom.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kingdom_Centre_Tower.JPG/1280px-Kingdom_Centre_Tower.JPG',
     highlights: ['جسر المشاهدة ببرج المملكة', 'جولات بوليفارد وموسم الرياض', 'فنادق 5 نجوم في حي السفارات والعليا'],
     seasonNote: 'متاح طوال العام'
   },
@@ -137,7 +150,8 @@ export const GALLERY_ROW_3: GalleryPhotoItem[] = [
     title: 'جزر البحر الأحمر والشعاب المرجانية البكر',
     subtitle: 'استجمام فاخر فوق المياه الفيروزية الصافية في أرخبيل أملج وجزر أمهات بالبحر الأحمر',
     region: 'البحر الأحمر · أملج والوجه',
-    imageUrl: '/images/redsea-ummahat.jpg',
+    imageUrl: 'images/redsea-ummahat.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/%D8%A7%D9%84%D8%B4%D8%B9%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A7%D9%86%D9%8A%D8%A9_%D8%A8%D8%A7%D9%84%D8%A8%D8%AD%D8%B1_%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1_-_%D8%A3%D9%85%D9%84%D8%AC.jpg/1280px-%D8%A7%D9%84%D8%B4%D8%B9%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A7%D9%86%D9%8A%D8%A9_%D8%A8%D8%A7%D9%84%D8%A8%D8%AD%D8%B1_%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1_-_%D8%A3%D9%85%D9%84%D8%AC.jpg',
     highlights: ['فلل شاطئية وعائمة بخصوصية تامة', 'رحلات يخت وغوص في الشعاب البكر', 'طيران مباشر لمطار البحر الأحمر الدولي'],
     seasonNote: 'طوال العام · طقس معتدل'
   },
@@ -146,7 +160,8 @@ export const GALLERY_ROW_3: GalleryPhotoItem[] = [
     title: 'قرية رجال ألمع التراثية وقمم عسير',
     subtitle: 'أجواء جبلية باردة وضباب يعانق المدرجات الخضراء والحصون الحجرية الملونة بجنوب المملكة',
     region: 'أبها وعسير · السروات الجنوبية',
-    imageUrl: '/images/abha-asir.jpg',
+    imageUrl: 'images/abha-asir.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/%D8%B1%D8%AC%D8%A7%D9%84_%D8%A3%D9%84%D9%85%D8%B91.jpg/1280px-%D8%B1%D8%AC%D8%A7%D9%84_%D8%A3%D9%84%D9%85%D8%B91.jpg',
     highlights: ['زيارة قرية رجال ألمع التاريخية', 'مطل السودة والقرية المعلقة بحبلة', 'رحلات عائلية صيفية في أجواء الغيم'],
     seasonNote: 'مايو — سبتمبر (موسم الصيف)'
   },
@@ -155,7 +170,8 @@ export const GALLERY_ROW_3: GalleryPhotoItem[] = [
     title: 'مرتفعات الهدا والشفا بمدينة الورد الطائف',
     subtitle: 'إطلالات جبلية خلابة عبر طريق الكر والتلفريك ومزارع الورد الطائفي القريبة من مكة المكرمة',
     region: 'الطائف · مصيف العرب',
-    imageUrl: '/images/taif-mountains.jpg',
+    imageUrl: 'images/taif-mountains.jpg',
+    remoteFallback: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Al_Hada_mountain_at_dusk.jpg/1280px-Al_Hada_mountain_at_dusk.jpg',
     highlights: ['رحلة يوم كامل من مكة أو جدة', 'زيارة مصانع ومزارع الورد الطائفي', 'منتجعات الشفا والهدا الجبلية'],
     seasonNote: 'ربيع وصيف الطائف'
   }
@@ -207,6 +223,13 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({
               src={item.imageUrl}
               alt={item.title}
               loading="lazy"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (target.src !== item.remoteFallback) {
+                  target.src = item.remoteFallback;
+                }
+              }}
               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/15 to-black/90 opacity-95 group-hover:opacity-100 transition-opacity" />
